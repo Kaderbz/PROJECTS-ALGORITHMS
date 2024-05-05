@@ -1,0 +1,16 @@
+Solo project: Fix & Go
+
+Description: A web application for a car garage mechanics that keeps track of different interventions on customers cars.
+
+Stack: JAVASCRIPT
+
+Feature list: Language JAVASCRIPT
+              Project is on GitHub
+              .gitignore file in root folder
+              All of CRUD* on a non-User table
+              CSS implemented, and possibly other static content
+              Data is validated upon create and edit, errors show
+              Login and Registration with validations	
+              Protected routes (Must be logged in to view)
+              Application is responsive (maybe)
+              Application uses a CSS framework such as Bootstrap
