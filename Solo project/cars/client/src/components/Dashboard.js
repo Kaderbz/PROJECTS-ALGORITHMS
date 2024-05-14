@@ -39,14 +39,12 @@ const Dashboard = () => {
     }
 
     const logout = () => {
-        axios.post('http://localhost:8000/logout', {}, { withCredentials: true })
-            .then(() => {
-                navigate('/');
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    };
+        axios.post('http://localhost:8000/logout',{},{withCredentials: true})
+        .then(res => {
+            console.log(res)
+            navigate('/')
+        })
+    }
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-primary-subtle">
