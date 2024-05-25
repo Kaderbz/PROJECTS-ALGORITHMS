@@ -1,0 +1,83 @@
+class BTNode {
+    constructor(value) {
+        this.val = value;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+class BST {
+    constructor() {
+        this.root = null;
+    }
+
+    add(val) {
+        const newNode = new BTNode(val);
+        if (!this.root) {
+            this.root = newNode;
+        } else {
+            this._addToNode(this.root, newNode);
+        }
+    }
+
+    _addToNode(node, newNode) {
+        if (newNode.val < node.val) {
+            if (!node.left) {
+                node.left = newNode;
+            } else {
+                this._addToNode(node.left, newNode);
+            }
+        } else {
+            if (!node.right) {
+                node.right = newNode;
+            } else {
+                this._addToNode(node.right, newNode);
+            }
+        }
+    }
+
+    contains(val) {
+        return this._containsInNode(this.root, val);
+    }
+
+    _containsInNode(node, val) {
+        if (!node) return false;
+        if (node.val === val) return true;
+        if (val < node.val) {
+            return this._containsInNode(node.left, val);
+        } else {
+            return this._containsInNode(node.right, val);
+        }
+    }
+
+    min() {
+        if (!this.root) return null;
+        let current = this.root;
+        while (current.left) {
+            current = current.left;
+        }
+        return current.val;
+    }
+
+    max() {
+        if (!this.root) return null;
+        let current = this.root;
+        while (current.right) {
+            current = current.right;
+        }
+        return current.val;
+    }
+
+    size() {
+        return this._getSize(this.root);
+    }
+
+    _getSize(node) {
+        if (!node) return 0;
+        return 1 + this._getSize(node.left) + this._getSize(node.right);
+    }
+
+    isEmpty() {
+        return this.root === null;
+    }
+}

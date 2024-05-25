@@ -1,0 +1,37 @@
+Source code is the human-readable version of a computer program written in a programming language. It contains instructions that a computer can understand and execute.
+
+Computers are considered "smart" because they can process vast amounts of data quickly, perform complex calculations, and execute tasks based on programmed instructions.
+
+The purpose of a programming language is to provide a set of rules and syntax for writing source code to create software applications or perform specific tasks on a computer.
+
+Three examples of programming languages are Python, JavaScript, and C++. There are many programming languages because different languages are designed for specific purposes, offer different levels of abstraction, and have unique features and strengths.
+
+A variable is a named storage location in a computer's memory that holds data. Variables are useful because they allow programmers to store and manipulate data dynamically within a program.
+
+In most programming languages, a single-equals (=) is used for assignment, while a double-equals (==) is used for comparison. The single-equals assigns a value to a variable, whereas the double-equals compares two values for equality.
+
+In JavaScript, a double-equals (==) checks for loose equality, meaning it performs type coercion before comparing values. A triple-equals (===) checks for strict equality, meaning it does not perform type coercion and requires both the value and the type to be the same for two values to be considered equal.
+
+The developer console exists primarily for debugging purposes. It allows developers to inspect and interact with the runtime environment of a web page or application, view error messages, and execute JavaScript code.
+
+Conditional statements allow a program to make decisions and execute different code based on whether a condition is true or false. An example is an "if" statement that checks if a variable is greater than a certain value and executes a block of code if the condition is true.
+
+FOR and WHILE loops are used to repeat a block of code multiple times. We use them in source code to automate repetitive tasks or iterate over collections of data.
+
+You would use a WHILE loop when you need to repeat a block of code based on a condition that may change during the loop's execution. In contrast, a FOR loop is typically used when you know the exact number of iterations needed.
+
+A function is a block of reusable code that performs a specific task. We use functions to modularize code, improve code readability, and promote code reuse.
+
+A function can return one value, but it can also return multiple values by packaging them into a data structure like an array or an object. When calling a function, you can send in as many values as its parameters require.
+
+An array is a data structure that can hold multiple values of the same data type. It allows us to store and manipulate collections of data efficiently.
+
+A T-diagram, also known as a trace table, is a method used to track the values of variables as a program executes. It helps programmers understand how variables change over time and debug code more effectively.
+
+The two ways to comment JavaScript code are single-line comments, denoted by //, and multi-line comments, enclosed between /* and */. Single-line comments are typically used for short comments on a single line, while multi-line comments are used for longer explanations or commenting out multiple lines of code.
+
+
+
+
+
+

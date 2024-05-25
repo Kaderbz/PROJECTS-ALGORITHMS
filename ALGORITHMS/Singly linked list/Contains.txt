@@ -1,0 +1,34 @@
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class SLL {
+    constructor() {
+        this.head = null;
+    }
+
+    // Other methods here...
+
+    contains(value) {
+        let current = this.head;
+        while (current !== null) {
+            if (current.data === value) {
+                return true; // Value found
+            }
+            current = current.next;
+        }
+        return false; // Value not found
+    }
+}
+
+// Example usage:
+const myList = new SLL();
+myList.addToHead(3);
+myList.addToHead(5);
+myList.addToHead(7);
+
+console.log(myList.contains(5)); // Output: true
+console.log(myList.contains(8)); // Output: false

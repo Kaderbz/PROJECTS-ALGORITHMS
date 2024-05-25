@@ -1,0 +1,90 @@
+# Threes and Fives
+def threesFives():
+    sum = 0
+    for i in range(100, 4000001):
+        if (i % 3 == 0 or i % 5 == 0) and not (i % 3 == 0 and i % 5 == 0):
+            sum += i
+    print(sum)
+
+threesFives()
+
+# Generate Coin Change
+def generateCoinChange(cents):
+    coins = [('quarters', 25), ('dimes', 10), ('nickels', 5), ('pennies', 1)]
+    for coin_name, value in coins:
+        count = cents // value
+        print(f"{coin_name}: {count}")
+        cents -= count * value
+
+generateCoinChange(94)
+
+# Messy Math Mashup
+def messyMath(num):
+    if num % 3 == 0:
+        return -1
+    sum = 0
+    for i in range(num+1):
+        if i % 3 == 0:
+            continue
+        elif i % 7 == 0:
+            sum += 2 * i
+        else:
+            sum += i
+    return sum
+
+print(messyMath(4))
+print(messyMath(8))
+print(messyMath(15))
+
+# Twelve-Bar Blues
+def twelveBarBlues():
+    for i in range(1, 13):
+        print(i)
+        print("chick")
+        print("boom")
+        print("chick")
+
+twelveBarBlues()
+
+# Fibonacci
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
+
+print(fibonacci(0))
+print(fibonacci(1))
+print(fibonacci(2))
+print(fibonacci(3))
+print(fibonacci(4))
+
+# Sum to One Digit
+def sumToOne(num):
+    while num >= 10:
+        num = sum(int(digit) for digit in str(num))
+    return num
+
+print(sumToOne(928))
+
+# Clock Hand Angles
+def clockHandAngles(seconds):
+    hour_deg = seconds % (3600 * 12) / (3600 * 12) * 360
+    minute_deg = seconds % 3600 / 3600 * 360
+    second_deg = seconds % 60 / 60 * 360
+    print(f"Hour hand: {hour_deg} degs. Minute hand: {minute_deg} degs. Second hand: {second_deg} degs.")
+
+clockHandAngles(3600)
+clockHandAngles(119730)
+
+# Is Prime
+def isPrime(num):
+    if num <= 1:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+print(isPrime(5))
+print(isPrime(16))

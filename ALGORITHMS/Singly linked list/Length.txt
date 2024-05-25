@@ -1,0 +1,27 @@
+class SLLNode {
+    int data;
+    SLLNode next;
+
+    public SLLNode(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class SLL {
+    SLLNode head;
+
+    // constructor and other methods...
+
+    public int length() {
+        int count = 0;
+        SLLNode current = head;
+        
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+        
+        return count;
+    }
+}

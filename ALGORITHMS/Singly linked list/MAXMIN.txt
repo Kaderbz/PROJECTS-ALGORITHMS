@@ -1,0 +1,85 @@
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+
+class SLL {
+    constructor() {
+        this.head = null;
+    }
+
+    // Method to add a new node to the end of the list
+    add(value) {
+        const newNode = new Node(value);
+        if (!this.head) {
+            this.head = newNode;
+        } else {
+            let current = this.head;
+            while (current.next) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+    }
+
+    // Method to find the maximum value in the list
+    max() {
+        if (!this.head) {
+            return null;
+        }
+        let maxVal = this.head.value;
+        let current = this.head.next;
+        while (current) {
+            if (current.value > maxVal) {
+                maxVal = current.value;
+            }
+            current = current.next;
+        }
+        return maxVal;
+    }
+
+    // Method to find the minimum value in the list
+    min() {
+        if (!this.head) {
+            return null;
+        }
+        let minVal = this.head.value;
+        let current = this.head.next;
+        while (current) {
+            if (current.value < minVal) {
+                minVal = current.value;
+            }
+            current = current.next;
+        }
+        return minVal;
+    }
+
+    // Method to find the average value of the list
+    average() {
+        if (!this.head) {
+            return null;
+        }
+        let sum = 0;
+        let count = 0;
+        let current = this.head;
+        while (current) {
+            sum += current.value;
+            count++;
+            current = current.next;
+        }
+        return sum / count;
+    }
+}
+
+// Example usage:
+const myList = new SLL();
+myList.add(5);
+myList.add(10);
+myList.add(3);
+myList.add(8);
+
+console.log("Max value:", myList.max()); // Output: Max value: 10
+console.log("Min value:", myList.min()); // Output: Min value: 3
+console.log("Average value:", myList.average()); // Output: Average value: 6.5

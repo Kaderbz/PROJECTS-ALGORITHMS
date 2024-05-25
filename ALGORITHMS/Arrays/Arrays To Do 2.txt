@@ -1,0 +1,46 @@
+// Reverse
+function reverseArr(arr) {
+  let start = 0, end = arr.length - 1;
+  while (start < end) {
+    let temp = arr[start];
+    arr[start++] = arr[end];
+    arr[end--] = temp;
+  }
+}
+
+// Rotate
+function rotateArr(arr, shiftBy) {
+  const n = arr.length;
+  shiftBy %= n;
+  if (shiftBy < 0) shiftBy += n;
+  reverseArr(arr);
+  reverseArr(arr, 0, shiftBy - 1);
+  reverseArr(arr, shiftBy, n - 1);
+}
+
+function reverseArr(arr, start = 0, end = arr.length - 1) {
+  while (start < end) {
+    let temp = arr[start];
+    arr[start++] = arr[end];
+    arr[end--] = temp;
+  }
+}
+
+// Filter Range
+function filterRange(arr, min, max) {
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] >= min && arr[i] <= max) {
+      arr[count++] = arr[i];
+    }
+  }
+  arr.length = count;
+}
+
+// Concat
+function arrConcat(arr1, arr2) {
+  const newArr = [];
+  newArr.push(...arr1);
+  newArr.push(...arr2);
+  return newArr;
+}

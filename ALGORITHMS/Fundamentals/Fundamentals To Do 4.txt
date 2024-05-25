@@ -1,0 +1,108 @@
+// Remove all except the last X elements from an array
+function removeElements(arr, X) {
+    arr.splice(0, arr.length - X);
+    return arr;
+}
+
+// Calculate the X-intercept of a linear equation Y = MX + B
+function calculateXIntercept(M, B) {
+    if (M === 0) {
+        return "No X-intercept, as M is zero.";
+    } else {
+        return -B / M;
+    }
+}
+
+// Print a day's outcome based on probabilities
+function whatHappensToday() {
+    const outcomes = ['volcano', 'tsunami', 'earthquake', 'blizzard', 'meteor'];
+    const probabilities = [10, 15, 20, 25, 30];
+    let total = 0;
+    for (let i = 0; i < probabilities.length; i++) {
+        total += probabilities[i];
+    }
+    let rand = Math.floor(Math.random() * total);
+    let sum = 0;
+    for (let i = 0; i < probabilities.length; i++) {
+        sum += probabilities[i];
+        if (rand < sum) {
+            return `Today's outcome: ${outcomes[i]}`;
+        }
+    }
+}
+
+// Improve function to reflect independent probabilities
+function whatReallyHappensToday() {
+    const outcomes = ['volcano', 'tsunami', 'earthquake', 'blizzard', 'meteor'];
+    let result = [];
+    for (let i = 0; i < outcomes.length; i++) {
+        if (Math.random() < 0.01 * (i + 1)) {
+            result.push(outcomes[i]);
+        }
+    }
+    if (result.length === 0) {
+        return "Today is disaster-free!";
+    } else {
+        return `Today's outcomes: ${result.join(', ')}`;
+    }
+}
+
+// Calculate final IQ after a 14-week bootcamp
+function finalIQ() {
+    let IQ = 101;
+    let increase = 0.01;
+    for (let i = 1; i <= 98; i++) {
+        IQ += increase;
+        increase += 0.01;
+    }
+    return IQ.toFixed(2);
+}
+
+// Assign letter grade based on score
+function assignLetterGrade(score) {
+    let grade;
+    if (score >= 90) {
+        grade = 'A';
+    } else if (score >= 80) {
+        grade = 'B';
+    } else if (score >= 70) {
+        grade = 'C';
+    } else if (score >= 60) {
+        grade = 'D';
+    } else {
+        grade = 'F';
+    }
+    return grade;
+}
+
+// Assign more accurate letter grade with signs
+function assignAccurateLetterGrade(score) {
+    let grade = assignLetterGrade(score);
+    let modifier = '';
+    if (grade !== 'F') {
+        if (score % 10 >= 8) {
+            modifier = '+';
+        } else if (score % 10 <= 1) {
+            modifier = '-';
+        }
+    }
+    return grade + modifier;
+}
+
+// Example usage:
+let arr = [2, 4, 6, 8, 10];
+console.log(removeElements(arr, 3)); // Output: [6, 8, 10]
+
+console.log(calculateXIntercept(2, 5)); // Output: -2.5
+
+console.log(whatHappensToday()); // Output: Today's outcome: volcano
+
+console.log(whatReallyHappensToday()); // Output: Today's outcomes: tsunami, earthquake
+
+console.log(`Bogdan's final IQ: ${finalIQ()}`);
+
+let score = 88;
+console.log(`Score: ${score}. Grade: ${assignAccurateLetterGrade(score)}`); // Output: Score: 88. Grade: B+
+
+score = 61;
+console.log(`Score: ${score}. Grade: ${assignAccurateLetterGrade(score)}`); // Output: Score: 61. Grade: D-

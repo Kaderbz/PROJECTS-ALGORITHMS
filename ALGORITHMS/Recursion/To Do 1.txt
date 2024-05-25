@@ -1,0 +1,21 @@
+def rSigma(num):
+    return 0 if num <= 0 else num + rSigma(num - 1)
+
+def rFact(num):
+    return 1 if num <= 1 else int(num) * rFact(int(num) - 1)
+
+def floodFill(canvas, startXY, newColor):
+    def fill(x, y, original_color, new_color):
+        if x < 0 or x >= len(canvas) or y < 0 or y >= len(canvas[0]):
+            return
+        if canvas[x][y] != original_color:
+            return
+        canvas[x][y] = new_color
+        fill(x+1, y, original_color, new_color)
+        fill(x-1, y, original_color, new_color)
+        fill(x, y+1, original_color, new_color)
+        fill(x, y-1, original_color, new_color)
+
+    original_color = canvas[startXY[0]][startXY[1]]
+    fill(startXY[0], startXY[1], original_color, newColor)
+    return canvas
